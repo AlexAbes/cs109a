@@ -29,7 +29,7 @@ Preliminary EDA indicated that there were large outliers in the dataset for the 
 
 Several of the variables, such as total duration, appear to have quadratic rather than linear relationships with the response variable. This caused us to brainstorm modeling ideas that would allow us to also incorporate other variables that appeared to have linear relationships with the followers variable, such as average loudness. Visualizations and further details on the findings from EDA can be found in the EDA notebook.
 
-###### Brief overview of the data collection process
+##### Brief overview of the data collection process
 
 The data was collected using the following steps:
 1. We used the [Spotipy API wrapper](http://spotipy.readthedocs.io/en/latest/) to collect the basic information of a set of about 1,700 public Spotify-owned playlists.
@@ -43,7 +43,7 @@ The result of this process was about 1,500 playlists. Roughly 142 of these playl
 
 The following table describes the features that were contained in our dataset at the time that we began modeling. The descriptions of the audio features are quoted directly from the [Spotify API documentation](https://developer.spotify.com/web-api/get-audio-features/).
 
-###### Features of our dataset
+##### Features of our dataset
 
 | Feature                  | Description                                                                                                                                                                                                                                                                                                                                              |
 |--------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
