@@ -11,11 +11,11 @@ CS109A Introduction to Data Science, Fall 2017, Harvard University
 # Final Project Report
 
 #### Table of Contents:
-* [Problem Statement and Motivation](/#problem-statement-and-motivation)
-* [Introduction and Description of Data](/#introduction-and-description-of-data)
-* [Literature Review / Related Work](/#literature-reviewrelated-work)
-* [Modeling Approach and Project Trajectory](/#modeling-approach-and-project-trajectory)
-* [Results, Conclusions, and Future Work](/#results-conclusions-and-future-work)
+* [Problem Statement and Motivation](/cs109a/#problem-statement-and-motivation)
+* [Introduction and Description of Data](/cs109a/#introduction-and-description-of-data)
+* [Literature Review / Related Work](/cs109a/#literature-reviewrelated-work)
+* [Modeling Approach and Project Trajectory](/cs109a/#modeling-approach-and-project-trajectory)
+* [Results, Conclusions, and Future Work](/cs109a/#results-conclusions-and-future-work)
 
 ### Problem Statement and Motivation
 
