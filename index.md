@@ -41,7 +41,6 @@ The data was collected using the following steps:
 
 The result of this process was about 1,500 playlists. Roughly 142 of these playlists had no tracks with any associated genre in their artist, and therefore they were dropped. In addition, the original data collected from Spotify contained about 270 unique genres. We manually mapped each genre to a meta-genre, as we could not find a reliable computer-driven method to do so, and replaced the subgenres with these meta-genres. The mapping between these 278 original genres to the 23 meta-genres (not counting None, which was deleted from the dataset) is given in the below table.
 
-
 | Original Spotify genre   | Meta-genre |
 |--------------------------|------------|
 | pop                      | pop        |
@@ -390,10 +389,11 @@ Having achieved a model with a decent accuracy score, we tried to extend the mod
 
 Our final chosen model uses quadratic terms to achieve an overall test accuracy rate of 86%, as seen in the graph below.
 
-![Model comparison](/Model_comparison.png)
+![Model comparison](/Model_comparison.png =250x)
 
 ## Results, Conclusions, and Future Work
 
+Full details of the final model can be found in the models notebook. However, we discuss here the implications of the best-performing model, namely a multiple logistic regression model with quadratic terms.
 * Quantitative prediction very difficult, and low R^2 score indicates that simply computational variables cannot fully explain what makes a good playlist
 * Future work would include work using the year
 * Themed years and playlists and special work around themes like Christmas playlists
