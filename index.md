@@ -387,13 +387,13 @@ We conducted a confidence interval analysis to discover which variables were act
 
 Having achieved a model with a decent accuracy score, we tried to extend the model to make it more specific in its prediction. Recall that a playlist is designated as popular if it reaches 250,000 followers. This excludes about 80% of the dataset, which is why the accuracy for each class was so different. We attempted to fix this issue by reworking our data and models for three classes; unpopular, popular, and very popular. Unpopular playlists had between 0 and 90,000 followers, popular playlists had between 90,000 and 225,000 followers, and very popular playlists had more than 225,000 followers. These threshold corresponded to the 65th and 80th percentiles, ensuring a decent distribution of data to each class (but retaining the characteristic that most playlists are unpopular). Multiple logistic regression models with this class system were at about 72%, and we found that while the true positive rate for unpopular playlists remained high at 91%, for both popular and very popular playlists it was only about 2% for each. Therefore we do not consider this to be a good model for finding popular playlists.
 
-Our final chosen model uses quadratic terms to achieve an overall test accuracy rate of 86%, as seen in the graph below.
+From the graph below we can compare the various models that were built during this project. Although the multiple logistic regression model with quadratic terms has a marginally better test accuracy score, for ease of interpretation we will use the multiple logistic regression model without the quadratic terms.
 
-<img src="Model_comparison.png" style="width: 400px;"></img>
+<img src="Model_comparison.png" style="width: 400px; align-text: center;">
 
 ## Results, Conclusions, and Future Work
 
-Full details of the final model can be found in the models notebook. However, we discuss here the implications of the best-performing model, namely a multiple logistic regression model with quadratic terms.
+Full details of the final model can be found in the models notebook. However, we discuss here the implications of the chosen model, namely a multiple logistic regression model.
 * Quantitative prediction very difficult, and low R^2 score indicates that simply computational variables cannot fully explain what makes a good playlist
 * Future work would include work using the year
 * Themed years and playlists and special work around themes like Christmas playlists
