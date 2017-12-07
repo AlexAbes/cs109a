@@ -39,7 +39,7 @@ The data was collected using the following steps:
 
 3. Finally, the set of JSON objects was turned into a CSV spreadsheet, where each row corresponded to a playlist and the audio analysis information contained in each track was aggregated into average values for that playlist, such as average danceability. A playlist's genre was imputed from the set of genres available for that playlist's tracks, which was in turn derived from the track's artist. A playlist's genre is therefore simply the most commonly-occurring genre amongst the set of genres collected across all tracks in the playlist, where each track has multiple genres. This is not an ideal process since an artist can work in a diverse area of genres, but the alternative was to work with a smaller dataset of about 800 playlists which were directly assigned categories by Spotify. When we evaluated the trade-off between more data or more accurate genre data, we chose the former.
 
-The result of this process was about 1,500 playlists. Roughly 142 of these playlists had no tracks with any associated genre in their artist, and therefore they were dropped. In addition, the original data collected from Spotify contained about 270 unique genres. We manually mapped each genre to a meta-genre, as we could not find a reliable computer-driven method to do so, and replaced the subgenres with these meta-genres. The mapping between these 278 original genres to the 24 meta-genres is given in the below table.
+The result of this process was about 1,500 playlists. Roughly 142 of these playlists had no tracks with any associated genre in their artist, and therefore they were dropped. In addition, the original data collected from Spotify contained about 270 unique genres. We manually mapped each genre to a meta-genre, as we could not find a reliable computer-driven method to do so, and replaced the subgenres with these meta-genres. The mapping between these 278 original genres to the 23 meta-genres (not counting None, which was deleted from the dataset) is given in the below table.
 
 | Original Spotify genre   | Meta-genre |
 |--------------------------|------------|
@@ -364,17 +364,22 @@ The [last article](https://www.thrillist.com/tech/nation/how-to-find-great-spoti
 
 ## Modeling Approach and Project Trajectory
 
-Before beginning any modeling we applied one-hot encoding to the genre predictor so that each genre had a binary column indicating the presence or absence of that column, with a default genre of 'ambient'.
+Before beginning any modeling we applied one-hot encoding to the genre predictor so that each genre had a binary column indicating the presence or absence of that column, with a default genre of 'ambient'. We also normalized the predictors to be between 0 and 1, since some of the variables had very different scales (for example, average loudness is a value in decibels between -60 and 0).
 
-We initially ran a simple linear regression using only the variable Maximum Popularity, with the aim of designating a baseline model upon which we could improve. We found that it achieved a
+We initially ran a simple linear regression using only the variable Maximum Popularity, with the aim of designating a baseline model upon which we could improve. We found that it achieved a R<sup>2</sup> score of only 0.06 and a mean squared error (MSE) of 337,266,472,892.05, which is obviously extremely high. When we ran a multiple linear regression with some of the other predictors, or even all of them, we found similarly poor results, with the model only reaching a R<sup>2</sup> score of about 0.1. These models were not successful at using the given features to predict the number of followers a playlist would garner.
 
-But no prediction system is perfect, and it is bound to make erroneous predictions. Our model could make two kinds of errors:
-- a false positive (an unpopular playlist was falsely predicted to be popular)
-- or a false negative (a popular playlist was falsely predicted to be unpopular)
+These results caused us to rethink our approach to modeling popularity. We shifted our focus towards predicting whether or not a playlist is popular, rather than predicting a specific number of followers. **We decided that a playlist shall be considered 'popular' if it has at least 250,000 followers, and 'unpopular' otherwise**. The number 250,000 was chosen because...
 
-Before beginning to build our models, we asked ourselves whether one kind of error was more palatable to us than the other, and if so which type. We reasoned that if our particular goal is to return popular playlists, then we want to be quite certain that if we return a playlist it actually is popular. This means that we want a high true positive rate. It also means that we mind less if we falsely classify a popular playlist as unpopular. We decided to make this our particular aim, within the overarching goal of having an accurate model across both types of errors.
+Thus we moved from a continuous response variable to a classification problem, which forced us to think about what kinds of classification errors we were willing to accept. Our model could make two kinds of errors:
+
+* a false positive (an unpopular playlist was falsely predicted to be popular)
+* or a false negative (a popular playlist was falsely predicted to be unpopular)
+
+Before beginning to build further models, we asked ourselves whether one kind of error was more palatable to us than the other, and if so which type. We reasoned that if our particular goal is to return popular playlists, then we want to be quite certain that if we return a playlist it actually is popular. This means that we want a high true positive rate. It also means that we mind less if we falsely classify a popular playlist as unpopular. We decided to make this our particular aim, within the overarching goal of having an accurate model across both types of errors.
 
 An economic rationale for this aim is that since a company like Spotify might have to invest considerable resources to license songs from artists, if we advise the company to pay those licensing fees to bring the playlist to their users then we should be quite sure of recouping the cost from showing advertising to a lot of followers. It is less painful if we neglect to find a promising playlist that would have done well, than if we cause the company to lose a lot of money on licensing songs for a playlist that users rarely listen to.
+
+
 
 ## Results, Conclusions, and Future Work
 
