@@ -19,9 +19,13 @@ We aim to build a model that predicts the popularity of a Spotify playlist given
 
 ### Introduction and Description of Data
 
-Description of relevant knowledge. Why is this problem important? Why is it challenging? Introduce the motivations for the project question and how that question was defined through preliminary EDA.
+Given that we predict that a playlist is popular, we would like the chances to be high that it actually is popular. Hence we seek to create a model that has a low false positive rate. We also want to balance this aim with a desire to return a diversity of playlists as popular; if we are only predicting a few playlists as popular then our model would not be very useful for Spotify executives creating playlists. We further explore the implications of this preference for one type of error over another in our model in the modeling section.
 
-Given that we predict that a playlist popular, we would like the chances to be high that it actually is popular. Hence we seek to create a model that has a low false positive rate. We also want to balance this aim with a desire to return a diversity of playlists as popular; if we are only predicting a few playlists as popular then our model would not be very useful for Spotify executives creating playlists.
+Preliminary EDA indicated that there were large outliers in the dataset for the number of playlist followers. The followers variable does not have a normal distribution in the dataset, and instead it is skewed with a right tail. Most playlists had a number of followers below a low value, but there were a few playlists which entirely skewed the data. This caused us to think differently about what it meant for a playlist to be popular, if very few playlists actually achieve stratospheric popularity. We decided to formulate our question towards determining whether a playlist will reach a certain level of popularity, rather than predicting the exact number of followers it will achieve.
+
+Several of the variables, such as total duration, appear to have quadratic rather than linear relationships with the response variable. This caused us to brainstorm modeling ideas that would allow us to also incorporate other variables that appeared to have linear relationships with the followers variable, such as average loudness. Visualizations and further details on the findings from EDA can be found in the EDA notebook.
+
+###### Brief overview of the data collection process
 
 The data was collected using the following steps:
 1. We used the [Spotipy API wrapper](http://spotipy.readthedocs.io/en/latest/) to collect the basic information of a set of about 1,700 public Spotify-owned playlists.
@@ -34,6 +38,8 @@ The data was collected using the following steps:
 The result of this process was about 1,500 playlists. Roughly 142 of these playlists had no tracks with any associated genre in their artist, and therefore they were dropped. In addition, the original data collected from Spotify contained about 270 unique genres. We manually mapped each genre to a meta-genre, as we could not find a reliable computer-driven method to do so, and replaced the subgenres with these meta-genres.
 
 The following table describes the features that were contained in our dataset at the time that we began modeling. The descriptions of the audio features are quoted directly from the [Spotify API documentation](https://developer.spotify.com/web-api/get-audio-features/).
+
+###### Features of our dataset
 
 | Feature                  | Description                                                                                                                                                                                                                                                                                                                                              |
 |--------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -63,6 +69,12 @@ The following table describes the features that were contained in our dataset at
 
 
 ## Literature Review/Related Work
+
+To understand where the Spotify playlist sits in the world of music, we found an [insightful article](https://www.wired.com/2017/05/secret-hit-making-power-spotify-playlist/) about how these playlists are used by artists and labels to shoot songs up to the top of the hit song list. The article informed us that the metrics to categorize Spotify playlists are getting more and more complicated, with new genres being added and playlists being meticulously curated for individual needs. Here, we were inspired to make sure we paid careful attention to the predictors we used and tried to relate them to some of the trends in the article, which states that playlists such as “Today’s Top Hits” and “Rap Caviar” are among the top playlists on Spotify.
+
+The next article that proved helpful was one consisting of a hand-picked [top 25 best playlists on Spotify](https://www.digitaltrends.com/music/best-playlists-on-spotify/). This article was a delve into the everyday nature of a playlist, and allowed us to see the true variation found in many popular playlists. Looking through the 25 playlists helped us to pick which genres we would want to classify our playlists under as well as helped us understand better what we were aiming to classify, a fully curated popular playlist.
+
+The [last article](https://www.thrillist.com/tech/nation/how-to-find-great-spotify-playlists) we found was extremely helpful in painting a better picture of the user’s interaction when picking a playlist which we then used as a basis for how our model should work. Since many of the most popular playlists on Spotify are curated directly by Spotify users, it was insightful to know some practices they have when it comes to creating a popular playlist, such as using Spotify’s “Discover Weekly”. We found that while the data we have did not allow for incredible creativity, a tip from the article called for creating themed playlists, which was in our capacity since we had predictors such as genre and artist.
 
 ## Modeling Approach and Project Trajectory
 
