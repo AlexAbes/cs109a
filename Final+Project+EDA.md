@@ -1,9 +1,4 @@
----
-title: EDA
-notebook: Final+Project+EDA.ipynb
-nav_include: 1
-nav_include: 2
----
+
 
 
 ```python
@@ -1593,7 +1588,7 @@ plt.legend();
 
 
 ```python
-#distribution of the avg. duration of songs (milliseconds)
+#distribution of the avg. duration of songs (milliseconds) 
 sns.distplot(df["average_duration_min"],rug=True, hist_kws = {'alpha': 0.25, 'label': 'Avg. Song Duration'});
 plt.legend();
 ```
@@ -1619,7 +1614,7 @@ plt.xlabel("Followers (binned)");
 ![png](Final%2BProject%2BEDA_files/Final%2BProject%2BEDA_7_0.png)
 
 
-#### All average audio information variables (seen in the visualizations below) appear to have meaningful relationships with the response variable; some more than others, but some are linear and some (such as mode) appear to be curved.
+#### All average audio information variables (seen in the visualizations below) appear to have meaningful relationships with the response variable; some more than others, but some are linear and some (such as mode) appear to be curved. 
 
 
 
@@ -1747,7 +1742,7 @@ ax1.set_xlabel('Number of Songs')
 ![png](Final%2BProject%2BEDA_files/Final%2BProject%2BEDA_12_2.png)
 
 
-#### A quick test for colinearity provides us with good information about the information that our predictors encode not just individually, but as an overall dataset. We wanted to look at these relationships as we will need to be aware of what predictors are the most powerful and which can be encapsulated by another variable.
+#### A quick test for colinearity provides us with good information about the information that our predictors encode not just individually, but as an overall dataset. We wanted to look at these relationships as we will need to be aware of what predictors are the most powerful and which can be encapsulated by another variable. 
 
 
 
@@ -2327,3 +2322,4 @@ plt.xticks(rotation=90);
 
 
 ![png](Final%2BProject%2BEDA_files/Final%2BProject%2BEDA_18_0.png)
+
