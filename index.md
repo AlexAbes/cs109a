@@ -1,15 +1,13 @@
 ---
-title: The Case of the Italian Olives
+title: Spotify Playlist Popularity
 ---
 
-This is the home page
+#### By Alexandra Abrahams and Kahunui Foster
 
-## Lets have fun
+CS109A Introduction to Data Science, Fall 2017, Harvard University
 
->here is a quote
+## Goals
+
+We aim to build a model that predicts the popularity of a Spotify playlist given the
 
 Here is *emph* and **bold**.
-
-Here is some inline math $\alpha = \frac{\beta}{\gamma}$ and, of-course, E rules:
-
-$$ G_{\mu\nu} + \Lambda g_{\mu\nu}  = 8 \pi T_{\mu\nu} . $$

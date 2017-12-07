@@ -1,6 +1,6 @@
 theme: jekyll-theme-primer
-title: Support Vector Olives
-description: Keeping Italian Olives Pure!
+title: Spotify Playlist Popularity
+description: Predicting the popularity of a Spotify playlist
 baseurl:
 markdown: kramdown
 kramdown:
