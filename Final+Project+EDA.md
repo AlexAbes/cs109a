@@ -42,10 +42,6 @@ sns.set_context("poster")
 ```
 
 
-    /anaconda/lib/python3.6/site-packages/statsmodels/compat/pandas.py:56: FutureWarning: The pandas.core.datetools module is deprecated and will be removed in a future version. Please use the pandas.tseries module instead.
-      from pandas.core import datetools
-
-
 ### Load Data
 
 
@@ -309,7 +305,7 @@ ax2.set_xlabel('Avg. Acousticness')
 
 
 
-    <matplotlib.text.Text at 0x11a487be0>
+    <matplotlib.text.Text at 0x11a7b3128>
 
 
 
@@ -353,7 +349,7 @@ ax1.set_xlabel('Avg. Speechiness')
 
 
 
-    <matplotlib.text.Text at 0x11b2f0dd8>
+    <matplotlib.text.Text at 0x113ee6ba8>
 
 
 
@@ -392,7 +388,7 @@ ax1.set_xlabel('Number of Songs')
 
 
 
-    <matplotlib.text.Text at 0x11be067b8>
+    <matplotlib.text.Text at 0x11996ae48>
 
 
 
