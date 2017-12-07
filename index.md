@@ -12,6 +12,10 @@ CS109A Introduction to Data Science, Fall 2017, Harvard University
 
 #### Table of Contents:
 * [Problem Statement and Motivation](/#problem-statement-and-motivation)
+* [Introduction and Description of Data](/#introduction-and-description-of-data)
+* [Literature Review / Related Work](/#literature-reviewrelated-work)
+* [Modeling Approach and Project Trajectory](/#modeling-approach-and-project-trajectory)
+* [Results, Conclusions, and Future Work](/#results-conclusions-and-future-work)
 
 ### Problem Statement and Motivation
 
@@ -78,6 +82,8 @@ The [last article](https://www.thrillist.com/tech/nation/how-to-find-great-spoti
 
 ## Modeling Approach and Project Trajectory
 
+*
+
 But no prediction system is perfect, and it is bound to make erroneous predictions. Our model could make two kinds of errors:
 - a false positive (an unpopular playlist was falsely predicted to be popular)
 - or a false negative (a popular playlist was falsely predicted to be unpopular)
@@ -88,4 +94,9 @@ An economic rationale for this aim is that since a company like Spotify might ha
 
 ## Results, Conclusions, and Future Work
 
-Here is *emph* and **bold**.
+* Quantitative prediction very difficult, and low R^2 score indicates that simply computational variables cannot fully explain what makes a good playlist
+* Future work would include work using the year
+* Themed years and playlists and special work around themes like Christmas playlists
+* Music curators' jobs are safe from the machines for now.
+
+Extension: try to produce a rock playlist using the popularity of individual songs to get to the best possible average popularity; just grab the most popular songs in that genre.
