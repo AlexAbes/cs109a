@@ -10,7 +10,7 @@ CS109A Introduction to Data Science, Fall 2017, Harvard University
 
 # Final Project Report
 
-#### Table of Contents:
+#### Contents:
 * [Problem Statement and Motivation](/cs109a/#problem-statement-and-motivation)
 * [Introduction and Description of Data](/cs109a/#introduction-and-description-of-data)
 * [Literature Review / Related Work](/cs109a/#literature-reviewrelated-work)
