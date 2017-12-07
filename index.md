@@ -389,7 +389,7 @@ Having achieved a model with a decent accuracy score, we tried to extend the mod
 
 Our final chosen model uses quadratic terms to achieve an overall test accuracy rate of 86%, as seen in the graph below.
 
-![Model comparison](/Model_comparison.png =250x)
+<img src="Model_comparison.png" style="width: 400px;"></img>
 
 ## Results, Conclusions, and Future Work
 
