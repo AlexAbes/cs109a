@@ -1,3 +1,2 @@
-# testgpages
-
-Based on the CS109A lab for creating websites for Jupyter reports: https://github.com/AlexAbes/gpages
+# cs109a
+GitHub repository for the website report on the CS109A 2017 final project of Alex Abrahams and Kahunui Foster.
