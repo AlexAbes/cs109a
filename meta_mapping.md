@@ -4,6 +4,7 @@ layout: default
 nav_include: 1
 nav_include: 2
 nav_include: 3
+nav_include: 4
 ---
 
 ##### Mapping of the 278 Spotify genres to a shorter list of 23 meta-genres.
